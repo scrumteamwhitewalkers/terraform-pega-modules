@@ -1,8 +1,6 @@
 resource "helm_release" "dashboard" {
   depends_on = [
-    "null_resource.tiller",
-    "kubernetes_service_account.tiller",
-    "kubernetes_cluster_role_binding.tiller",
+    "null_resource.wait",
   ]
 
   count     = "${var.enable_dashboard ? 1 : 0}"

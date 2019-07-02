@@ -1,4 +1,4 @@
-provider "helm" {
+/*provider "helm" {
   version         = "~> 0.10"
   install_tiller  = false
   tiller_image    = "${var.tiller_image}"
@@ -47,7 +47,7 @@ resource "kubernetes_cluster_role_binding" "tiller" {
 }
 
 resource "null_resource" "tiller" {
-  depends_on = ["kubernetes_cluster_role_binding.tiller"]
+  depends_on = ["null_resource.wait"]
 
   provisioner "local-exec" {
     command = "helm init --wait --upgrade --force-upgrade --service-account tiller --kubeconfig ./kubeconfig_${var.name} --tiller-connection-timeout 300"
@@ -57,4 +57,4 @@ resource "null_resource" "tiller" {
     command = "helm reset --force --kubeconfig ./kubeconfig_${var.name} --tiller-connection-timeout 300 && sleep 180"
     when    = "destroy"
   }
-}
+}*/
