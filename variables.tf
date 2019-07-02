@@ -121,7 +121,3 @@ variable alb_ingress_enabled {
 variable route53_zone {
   default = "dev.pega.io"
 }
-
-variable resource_shell_version {
-  default = "v0.12.0"
-}
