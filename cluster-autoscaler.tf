@@ -40,6 +40,11 @@ resource "helm_release" "cluster-autoscaler" {
     value = "${var.cloud_provider}"
   }
 
+  set {
+    name  = "fullnameOverride"
+    value = "cluster-autoscaler"
+  }
+
   depends_on = [
     "null_resource.wait",
   ]

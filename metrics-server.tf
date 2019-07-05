@@ -10,6 +10,11 @@ resource "helm_release" "metrics-server" {
     value = "--kubelet-insecure-tls"
   }
 
+  set {
+    name  = "fullnameOverride"
+    value = "metrics-server"
+  }
+
   depends_on = [
     "null_resource.wait",
   ]
