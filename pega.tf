@@ -56,6 +56,7 @@ resource "helm_release" "pega" {
 resource "null_resource" "delete_ingress" {
   depends_on = [
     "helm_release.pega",
+    "helm_release.aws-alb-ingress-controller",
   ]
 
   provisioner "local-exec" {

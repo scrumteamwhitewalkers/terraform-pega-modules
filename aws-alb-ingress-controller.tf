@@ -1,4 +1,3 @@
-/*
 resource "helm_release" "aws-alb-ingress-controller" {
   count      = "${var.alb_ingress_enabled ? 1 : 0}"
   name       = "aws-alb-ingress-controller"
@@ -37,10 +36,6 @@ resource "helm_release" "aws-alb-ingress-controller" {
   }
 
   depends_on = [
-    "null_resource.tiller",
-    "kubernetes_service_account.tiller",
-    "kubernetes_cluster_role_binding.tiller",
+    "null_resource.wait",
   ]
 }
-*/
-

@@ -3,6 +3,10 @@
 ############################
 variable kubernetes_provider {}
 
+variable region {
+  default = "us-west-2"
+}
+
 #################################################################
 # The dependency to wait for creating all  resources in module  #
 #################################################################
@@ -112,6 +116,14 @@ variable enable_dashboard {
 # Will be true in case of EKS?  #
 #################################
 variable alb_ingress_enabled {
+  default = false
+}
+
+variable cluster_autoscaler_enabled {
+  default = false
+}
+
+variable metrics_server_enabled {
   default = false
 }
 

@@ -54,7 +54,7 @@ traefik:
 # For EKS - set this to true.
 # GKE or AKS or K8s or Openshift - set this to false and enable traefik.
 aws-alb-ingress-controller:
-  enabled: true
+  enabled: false
   ## Resources created by the ALB Ingress controller will be prefixed with this string
   clusterName: "YOUR_EKS_CLUSTER_NAME"
   ## Auto Discover awsRegion from ec2metadata, set this to true and omit awsRegion when ec2metadata is available.
@@ -398,7 +398,7 @@ metrics-server:
   # Set this to true to install metrics-server. Follow below guidelines specific to each provider,
   # open-source Kubernetes, Openshift & EKS - mandatory to set this to true if web.hpa.enabled or batch.hpa.enabled is true
   # GKE or AKS - set this to false since metrics-server is installed in the cluster by default.
-  enabled: true
+  enabled: false
   # Set any additional metrics-server parameters. These values will be used by metrics-server's helm chart.
   # See https://github.com/helm/charts/blob/master/stable/metrics-server/values.yaml
   args:
