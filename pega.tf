@@ -28,6 +28,11 @@ resource "helm_release" "pega" {
   }
 
   set {
+    name  = "docker.registry.url"
+    value = "${var.docker_url}"
+  }
+
+  set {
     name  = "web.domain"
     value = "${var.name}-web.${var.route53_zone}"
   }

@@ -101,19 +101,12 @@ variable deployment_timeout {
   default = "7200"
 }
 
-#################
-# Tiller Image  #
-#################
-variable tiller_image {
-  default = "gcr.io/kubernetes-helm/tiller:v2.13.1"
-}
-
 ######################################################
 # Shoud deploy Kubernetes Dashboard ?                #
 # Will be true in case of EKS and AKS                #
 # In GKE this can be enabled while creating cluster  #
 ######################################################
-variable enable_dashboard {
+variable enable_kubernetes_dashboard {
   default = false
 }
 
@@ -121,7 +114,7 @@ variable enable_dashboard {
 # Shoud deploy ALB Ingress ?    #
 # Will be true in case of EKS?  #
 #################################
-variable alb_ingress_enabled {
+variable enable_alb_ingress_controller {
   default = false
 }
 
@@ -129,7 +122,7 @@ variable alb_ingress_enabled {
 # Shoud deploy cluster autoscaler ? #
 # Will be true in case of EKS?      #
 #####################################
-variable cluster_autoscaler_enabled {
+variable enable_cluster_autoscaler {
   default = false
 }
 
@@ -137,7 +130,7 @@ variable cluster_autoscaler_enabled {
 # Shoud deploy metrics server ? #
 # Will be true in case of EKS?  #
 #################################
-variable metrics_server_enabled {
+variable enable_metrics_server {
   default = false
 }
 

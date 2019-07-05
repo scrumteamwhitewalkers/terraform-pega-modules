@@ -1,9 +1,5 @@
 resource "helm_release" "dashboard" {
-  depends_on = [
-    "null_resource.wait",
-  ]
-
-  count     = "${var.enable_dashboard ? 1 : 0}"
+  count     = "${var.enable_kubernetes_dashboard ? 1 : 0}"
   name      = "dashboard"
   chart     = "stable/kubernetes-dashboard"
   namespace = "kube-system"
@@ -32,4 +28,8 @@ resource "helm_release" "dashboard" {
     name  = "fullnameOverride"
     value = "kubernetes-dashboard"
   }
+
+  depends_on = [
+    "null_resource.wait",
+  ]
 }
