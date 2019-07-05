@@ -1,11 +1,17 @@
-############################
-# eks/aks/gke  #
-############################
+##################
+# aws/gcp/azure  #
+##################
+variable cloud_provider {}
+
+###############
+# eks/gke/aks #
+###############
 variable kubernetes_provider {}
 
-variable region {
-  default = "us-west-2"
-}
+########################################
+# region where the cluster is deployed #
+########################################
+variable region {}
 
 #################################################################
 # The dependency to wait for creating all  resources in module  #
@@ -119,10 +125,18 @@ variable alb_ingress_enabled {
   default = false
 }
 
+#####################################
+# Shoud deploy cluster autoscaler ? #
+# Will be true in case of EKS?      #
+#####################################
 variable cluster_autoscaler_enabled {
   default = false
 }
 
+#################################
+# Shoud deploy metrics server ? #
+# Will be true in case of EKS?  #
+#################################
 variable metrics_server_enabled {
   default = false
 }

@@ -3,7 +3,7 @@ resource "helm_release" "aws-alb-ingress-controller" {
   name       = "aws-alb-ingress-controller"
   repository = "${data.helm_repository.incubator.metadata.0.name}"
   chart      = "aws-alb-ingress-controller"
-  namespace  = "aws-alb-ingress-controller"
+  namespace  = "kube-system"
 
   set {
     name  = "clusterName"
@@ -12,11 +12,6 @@ resource "helm_release" "aws-alb-ingress-controller" {
 
   set {
     name  = "autoDiscoverAwsRegion"
-    value = "true"
-  }
-
-  set {
-    name  = "autoDiscoverAwsVpcID"
     value = "true"
   }
 

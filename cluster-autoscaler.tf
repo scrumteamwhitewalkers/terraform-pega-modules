@@ -5,9 +5,8 @@ resource "helm_release" "cluster-autoscaler" {
 
   name      = "cluster-autoscaler"
   chart     = "stable/cluster-autoscaler"
-  namespace = "cluster-autoscaler"
+  namespace = "kube-system"
   version   = "0.14.2"
-  keyring   = ""
 
   set {
     name  = "rbac.create"
