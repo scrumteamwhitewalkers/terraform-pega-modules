@@ -1,9 +1,8 @@
 resource "helm_release" "aws-alb-ingress-controller" {
-  count      = "${var.alb_ingress_enabled ? 1 : 0}"
-  name       = "aws-alb-ingress-controller"
-  repository = "${data.helm_repository.incubator.metadata.0.name}"
-  chart      = "aws-alb-ingress-controller"
-  namespace  = "kube-system"
+  count     = "${var.alb_ingress_enabled ? 1 : 0}"
+  name      = "aws-alb-ingress-controller"
+  chart     = "incubator/aws-alb-ingress-controller"
+  namespace = "kube-system"
 
   set {
     name  = "clusterName"
