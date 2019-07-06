@@ -59,12 +59,16 @@ variable jdbc_url {}
 ############################
 # Database Username #
 ############################
-variable jdbc_username {}
+variable jdbc_username {
+  default = "postgres"
+}
 
 ############################
 # Database Password #
 ############################
-variable jdbc {}
+variable jdbc_password {
+  default = "postgres"
+}
 
 ##############################################################
 # The URL from where the pega helm charts will be downloaded #
