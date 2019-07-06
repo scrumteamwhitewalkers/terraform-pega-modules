@@ -56,6 +56,16 @@ variable chart_version {
 ########################################
 variable jdbc_url {}
 
+############################
+# Database Username #
+############################
+variable jdbc_username {}
+
+############################
+# Database Password #
+############################
+variable jdbc {}
+
 ##############################################################
 # The URL from where the pega helm charts will be downloaded #
 ##############################################################

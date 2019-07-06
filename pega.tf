@@ -18,6 +18,16 @@ resource "helm_release" "pega" {
   }
 
   set {
+    name  = "jdbc.username"
+    value = "${var.jdbc_username}"
+  }
+
+  set {
+    name  = "jdbc.password"
+    value = "${var.jdbc_password}"
+  }
+
+  set {
     name  = "docker.registry.username"
     value = "${var.docker_username}"
   }
