@@ -58,7 +58,7 @@ resource "helm_release" "pega" {
   }
 }
 
-resource "local_file" "alb_ingress_hostname" {
+resource "local_file" "kubectl_lb_hostname_query" {
   depends_on = [
     "helm_release.pega",
   ]

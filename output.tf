@@ -1,3 +1,3 @@
-output "eks_pega_lb_hostname" {
-  value = "${local_file.alb_ingress_hostname.content}"
+output "kubectl_lb_hostname_query" {
+  value = "${local_file.kubectl_lb_hostname_query.content}"
 }
