@@ -58,23 +58,6 @@ resource "helm_release" "pega" {
   }
 }
 
-resource "null_resource" "delete_ingress" {
-  depends_on = [
-    "helm_release.pega",
-    "helm_release.aws-alb-ingress-controller",
-  ]
-
-  provisioner "local-exec" {
-    when = "destroy"
-
-    command = <<COMMAND
-      kubectl delete ingress pega-web -n ${var.namespace} --kubeconfig=./kubeconfig_${var.name} \
-      && kubectl delete ingress pega-stream -n ${var.namespace} --kubeconfig=./kubeconfig_${var.name} \
-      && sleep 30
-    COMMAND
-  }
-}
-
 resource "local_file" "alb_ingress_hostname" {
   depends_on = [
     "helm_release.pega",

@@ -1,3 +1,3 @@
-output "hostname" {
-  value = "${module.files.stdout}"
+output "eks_pega_lb_hostname" {
+  value = "${local_file.alb_ingress_hostname.content}"
 }
