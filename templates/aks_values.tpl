@@ -109,11 +109,11 @@ docker:
 # NOTE: These jdbc values provided are also considered for the upgrade source database details when upgrade/upgrade-deploy action is used.
 jdbc:
   url: "YOUR_JDBC_URL"
-  driverClass: "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+  driverClass: "org.postgresql.Driver"
   # Set the database type only for action = install/install-deploy/upgrade/upgrade-deploy. Valid values are: mssql, oracledate, udb, db2zos, postgres
-  dbType: "mssql"
+  dbType: "postgres"
   # Set the uri to download the database driver for your database.
-  driverUri: "https://scrumteamwhitewalkers.github.io/pega-helm-charts/sqljdbc4.jar"
+  driverUri: "https://jdbc.postgresql.org/download/postgresql-42.2.5.jar"
   # Set your database username and password. These values will be obfuscated and stored in a secrets file.
   username: "postgres"
   password: "postgres"
