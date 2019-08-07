@@ -109,7 +109,7 @@ docker:
 # NOTE: These jdbc values provided are also considered for the upgrade source database details when upgrade/upgrade-deploy action is used.
 jdbc:
   url: "YOUR_JDBC_URL"
-  driverClass: "org.postgresql.Driver"
+  driverClass: "com.microsoft.sqlserver.jdbc.SQLServerDriver"
   # Set the database type only for action = install/install-deploy/upgrade/upgrade-deploy. Valid values are: mssql, oracledate, udb, db2zos, postgres
   dbType: "mssql"
   # Set the uri to download the database driver for your database.
